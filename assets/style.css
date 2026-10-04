@@ -420,3 +420,13 @@ footer {
   padding: 26px 0;
   font-size: 12.5px;
 }
+
+/* ---- Live Clinic Updates (assets/clinic-updates.js) ---- */
+.update-tag.availability { background-color: rgba(107,70,193,0.12); color: #553c9a; }
+.update-tag.video { background-color: rgba(229,62,62,0.12); color: #c53030; }
+.update-tag.other { background-color: rgba(21,40,75,0.08); color: var(--navy); }
+.live-update-text { white-space: pre-line; }
+.live-update-link { display: inline-block; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--navy-light); text-decoration: none; }
+.live-update-link:hover { text-decoration: underline; }
+.home-latest .updates-list { margin-top: 18px; }
+.home-latest .all-updates { display: inline-block; margin-top: 14px; font-weight: 600; color: var(--navy-light); text-decoration: none; }
