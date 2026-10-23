@@ -420,6 +420,8 @@ footer {
   padding: 26px 0;
   font-size: 12.5px;
 }
+footer a { color: #1ff6e5; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
 
 /* ---- Live Clinic Updates (assets/clinic-updates.js) ---- */
 .update-tag.availability { background-color: rgba(107,70,193,0.12); color: #553c9a; }
