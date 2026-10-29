@@ -24,8 +24,18 @@ function setLang(lang) {
   if (btnEn) btnEn.classList.toggle('active', lang === 'en');
 }
 
-// Every visitor lands on the Arabic version first, every time — no
-// remembered preference from a previous visit or a prior toggle earlier
-// in the same session. They can still switch to English with the AR/EN
-// buttons above; it just resets to Arabic on the next page load.
-setLang('ar');
+// A new visit starts in Arabic. Once the visitor picks a language it is kept while they move between the
+// pages (this browser tab / session); a fresh visit starts in Arabic again. ?lang=en / ?lang=ar opens that
+// language directly.
+var SN_LANG_KEY = 'sn_site_lang';
+function snSavedLang() {
+  var m = /[?&]lang=(ar|en)\b/.exec(location.search);
+  if (m) return m[1];
+  try { var v = sessionStorage.getItem(SN_LANG_KEY); if (v === 'ar' || v === 'en') return v; } catch (e) { /* storage blocked */ }
+  return 'ar';
+}
+(function () {
+  var plain = setLang;
+  setLang = function (lang) { plain(lang); try { sessionStorage.setItem(SN_LANG_KEY, lang); } catch (e) { /* storage blocked */ } };
+})();
+setLang(snSavedLang());
