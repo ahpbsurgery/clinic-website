@@ -1,7 +1,7 @@
 (function () {
   var year = new Date().getFullYear();
   document.querySelectorAll('#year-en, #year-ar').forEach(function (el) { el.textContent = year; });
-  var footerSpan = document.querySelector('footer .i18n');
+  var footerSpan = document.querySelector('.footer-bottom .i18n') || document.querySelector('footer .i18n');
   if (footerSpan) {
     footerSpan.setAttribute('data-en', footerSpan.getAttribute('data-en').replace("<span id='year-en'></span>", year));
     footerSpan.setAttribute('data-ar', footerSpan.getAttribute('data-ar').replace("<span id='year-ar'></span>", year));
@@ -39,3 +39,28 @@ function snSavedLang() {
   setLang = function (lang) { plain(lang); try { sessionStorage.setItem(SN_LANG_KEY, lang); } catch (e) { /* storage blocked */ } };
 })();
 setLang(snSavedLang());
+
+// Mobile menu
+function snToggleNav(btn) {
+  var h = btn.closest('header');
+  var open = !h.classList.contains('open');
+  h.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function (e) {
+  var h = document.querySelector('header.site-header.open');
+  if (h && (!h.contains(e.target) || e.target.closest('nav.main-nav a'))) {
+    h.classList.remove('open');
+    var b = h.querySelector('.nav-toggle'); if (b) b.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Gentle fade-in as sections scroll into view
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();

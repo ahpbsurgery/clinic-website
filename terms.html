@@ -13,10 +13,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta property="og:image" content="https://drahmedabdelghany.com/assets/icon-512.png">
+<meta property="og:image" content="https://drahmedabdelghany.com/assets/doctor-880.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
   .policy { max-width: 820px; margin: 0 auto; line-height: 1.85; font-size: 16px; }
@@ -36,13 +36,14 @@ var PAGE_TITLES = { en: "Terms of Service — Prof. Dr. Ahmed Abdelghany", ar: "
 
 <header class="site-header">
   <div class="container nav-row">
-    <a class="brand" href="index.html"><span class="brand-mark">A</span> <span class="i18n" data-en="Prof. Dr. Ahmed Abdelghany" data-ar="الأستاذ الدكتور أحمد عبد الغني">الأستاذ الدكتور أحمد عبد الغني</span></a>
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo-160.webp" width="48" height="48" alt="" aria-hidden="true"> <span class="brand-text"><span class="brand-name i18n" data-en="Prof. Dr. Ahmed Abdelghany" data-ar="الأستاذ الدكتور أحمد عبد الغني">الأستاذ الدكتور أحمد عبد الغني</span><span class="brand-sub i18n" data-en="General &amp; Oncologic · GI &amp; HPB Surgery" data-ar="الجراحة العامة وجراحة الأورام · الجهاز الهضمي والكبد">الجراحة العامة وجراحة الأورام · الجهاز الهضمي والكبد</span></span></a>
     <div class="nav-right">
       <nav class="main-nav">
         <a href="index.html" class="i18n " data-en="Home" data-ar="الرئيسية">الرئيسية</a>
         <a href="services.html" class="i18n " data-en="Services" data-ar="الخدمات">الخدمات</a>
         <a href="about.html" class="i18n " data-en="About" data-ar="نبذة عن الطبيب">نبذة عن الطبيب</a>
         <a href="updates.html" class="i18n " data-en="Updates" data-ar="آخر الأخبار">آخر الأخبار</a>
+        <a href="media.html" class="i18n " data-en="Media" data-ar="في الإعلام">في الإعلام</a>
         <a href="videos.html" class="i18n " data-en="Videos" data-ar="فيديوهات">فيديوهات</a>
         <a href="contact.html" class="i18n " data-en="Contact" data-ar="تواصل معنا">تواصل معنا</a>
       </nav>
@@ -50,6 +51,7 @@ var PAGE_TITLES = { en: "Terms of Service — Prof. Dr. Ahmed Abdelghany", ar: "
         <button id="btn-lang-ar" onclick="setLang('ar')" type="button">AR</button>
         <button id="btn-lang-en" onclick="setLang('en')" type="button">EN</button>
       </div>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="snToggleNav(this)"><span></span></button>
     </div>
   </div>
 </header>
@@ -148,8 +150,37 @@ var PAGE_TITLES = { en: "Terms of Service — Prof. Dr. Ahmed Abdelghany", ar: "
 </section>
 
 <footer>
-  <div class="container">
-    <span class="i18n" data-en="© <span id='year-en'></span> Prof. Dr. Ahmed Abdelghany — HPB &amp; GI Surgery Clinic. All rights reserved." data-ar="© <span id='year-ar'></span> الأستاذ الدكتور أحمد عبد الغني — عيادة جراحات الكبد والجهاز الهضمي. جميع الحقوق محفوظة.">© <span id="year-ar"></span> الأستاذ الدكتور أحمد عبد الغني — عيادة جراحات الكبد والجهاز الهضمي. جميع الحقوق محفوظة.</span>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo-160.webp" width="64" height="64" alt="" aria-hidden="true">
+      <div>
+        <strong class="i18n" data-en="Prof. Dr. Ahmed Abdelghany" data-ar="الأستاذ الدكتور أحمد عبد الغني">الأستاذ الدكتور أحمد عبد الغني</strong>
+        <span class="i18n" data-en="Advanced Oncologic, GI &amp; HPB Surgical Care — USA &amp; Egypt" data-ar="رعاية جراحية متقدمة للأورام والجهاز الهضمي والكبد — أمريكا ومصر">رعاية جراحية متقدمة للأورام والجهاز الهضمي والكبد — أمريكا ومصر</span>
+        <p class="i18n" data-en="Clinics in Zagazig and New Cairo (Fifth Settlement). Appointments by WhatsApp." data-ar="عيادتان في الزقازيق والتجمع الخامس. الحجز عبر واتساب.">عيادتان في الزقازيق والتجمع الخامس. الحجز عبر واتساب.</p>
+      </div>
+    </div>
+    <div>
+      <h4 class="i18n" data-en="Explore" data-ar="روابط">روابط</h4>
+      <ul>
+        <li><a href="services.html" class="i18n" data-en="Services" data-ar="الخدمات">الخدمات</a></li>
+        <li><a href="about.html" class="i18n" data-en="About the Doctor" data-ar="نبذة عن الطبيب">نبذة عن الطبيب</a></li>
+        <li><a href="updates.html" class="i18n" data-en="Updates" data-ar="آخر الأخبار">آخر الأخبار</a></li>
+        <li><a href="videos.html" class="i18n" data-en="Videos" data-ar="فيديوهات">فيديوهات</a></li>
+        <li><a href="media.html" class="i18n" data-en="In the Media" data-ar="في الإعلام">في الإعلام</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="i18n" data-en="Contact" data-ar="تواصل">تواصل</h4>
+      <ul>
+        <li><a href="https://wa.me/201289856768?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" class="i18n" target="_blank" rel="noreferrer" data-en="WhatsApp: 0128 985 6768" data-ar="واتساب: 0128 985 6768">واتساب: 0128 985 6768</a></li>
+        <li><a href="tel:+201289856768" class="i18n" data-en="Call the clinic" data-ar="اتصل بالعيادة">اتصل بالعيادة</a></li>
+        <li><a href="index.html#locations" class="i18n" data-en="Locations &amp; hours" data-ar="الفروع والمواعيد">الفروع والمواعيد</a></li>
+        <li><a href="contact.html" class="i18n" data-en="Contact page" data-ar="صفحة التواصل">صفحة التواصل</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="i18n" data-en="© <span id='year-en'></span> Prof. Dr. Ahmed Abdelghany. All rights reserved." data-ar="© <span id='year-ar'></span> الأستاذ الدكتور أحمد عبد الغني. جميع الحقوق محفوظة.">© <span id="year-ar"></span> الأستاذ الدكتور أحمد عبد الغني. جميع الحقوق محفوظة.</span>
     · <a href="privacy.html" class="i18n" data-en="Privacy Policy" data-ar="سياسة الخصوصية">سياسة الخصوصية</a>
     · <a href="terms.html" class="i18n" data-en="Terms of Service" data-ar="شروط الاستخدام">شروط الاستخدام</a>
   </div>
